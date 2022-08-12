@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "http://code.lichongbing.com/lichongbing/Alamofire",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9e0328127dfb801cefe8ac53a13c0c90a7770448"
+      }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "http://code.lichongbing.com/lichongbing/JWTDecode.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "207dd17f873616dc867d0c62bb88b446901e5d6a"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "http://code.lichongbing.com/lichongbing/SwiftyJSON",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07"
+      }
+    }
+  ],
+  "version" : 2
+}
