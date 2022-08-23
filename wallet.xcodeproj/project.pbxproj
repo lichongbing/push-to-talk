@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43706B9B28B50C4C0047D663 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 43706B9A28B50C4C0047D663 /* SwiftUICharts */; };
 		43E3259F28A339B300AB66CB /* walletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3259E28A339B300AB66CB /* walletApp.swift */; };
 		43E325A128A339B300AB66CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325A028A339B300AB66CB /* ContentView.swift */; };
 		43E325A328A339B800AB66CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E325A228A339B800AB66CB /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E325BA28A3552000AB66CB /* SwiftyJSON in Frameworks */,
+				43706B9B28B50C4C0047D663 /* SwiftUICharts in Frameworks */,
 				43E325B728A354E300AB66CB /* Alamofire in Frameworks */,
 				43E325BD28A376C200AB66CB /* JWTDecode in Frameworks */,
 			);
@@ -193,6 +195,7 @@
 				43E325B628A354E300AB66CB /* Alamofire */,
 				43E325B928A3552000AB66CB /* SwiftyJSON */,
 				43E325BC28A376C200AB66CB /* JWTDecode */,
+				43706B9A28B50C4C0047D663 /* SwiftUICharts */,
 			);
 			productName = wallet;
 			productReference = 43E3259B28A339B300AB66CB /* wallet.app */;
@@ -226,6 +229,7 @@
 				43E325B528A354E300AB66CB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				43E325B828A3552000AB66CB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				43E325BB28A376C200AB66CB /* XCRemoteSwiftPackageReference "JWTDecode" */,
+				43706B9928B50C4C0047D663 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 43E3259C28A339B300AB66CB /* Products */;
 			projectDirPath = "";
@@ -481,6 +485,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		43706B9928B50C4C0047D663 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "http://code.lichongbing.com/lichongbing/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
 		43E325B528A354E300AB66CB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "http://code.lichongbing.com/lichongbing/Alamofire";
@@ -508,6 +520,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		43706B9A28B50C4C0047D663 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43706B9928B50C4C0047D663 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
 		43E325B628A354E300AB66CB /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 43E325B528A354E300AB66CB /* XCRemoteSwiftPackageReference "Alamofire" */;

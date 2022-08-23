@@ -12,7 +12,7 @@ class BankDao: ObservableObject{
     @Published var moneys : [Bank] = []
     let baseurl = Config.pro
     func addMony(newItem:Bank){
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -25,7 +25,7 @@ class BankDao: ObservableObject{
         }
     }
     func getItems() {
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -39,17 +39,25 @@ class BankDao: ObservableObject{
                 var itemss: [Bank] = []
                 let Json =  JSON(value);
                 let data  = Json["data"].arrayValue
+                let code = Json["code"].int
+                              if(code==200){
                 JSON(data).forEach { (JSON, json) in
                     let id  =  json["id"].stringValue
                     let name  =  json["name"].stringValue
                     let card  =  json["card"].stringValue
                     let date0  =  json["date0"].stringValue
                     let date1  =  json["date1"].stringValue
-                 
-                    let bk = Bank(id: id, name: name, card: card, date0: date0, date1: date1)
+                    let type  =  json["type"].intValue
+                    let balance = json["balance"].stringValue
+                    let duted = json["duted"].stringValue
+                    let bk = Bank(id: id, name: name, card: card, date0: date0, date1: date1,type: type,balance: balance,duted: duted)
                     itemss.append(bk)
                 }
                 self.moneys = itemss
+                }else{
+                  let login = false
+                  UserDefaults.standard.set(login,forKey: "loginA")
+                 }
             case .failure(let error):
                 print(error)
             }
@@ -59,7 +67,7 @@ class BankDao: ObservableObject{
     func deleteItem(indexSet: IndexSet) {
         let item = indexSet[indexSet.startIndex]
         let id =  moneys[item].id
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -73,7 +81,7 @@ class BankDao: ObservableObject{
        
     }
     func updateItem(item: Bank) {
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token

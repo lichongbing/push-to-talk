@@ -12,4 +12,7 @@ struct Bank: Identifiable,Encodable,Decodable,Hashable{
     let card: String
     let date0: String
     let date1: String
+    let type: Int
+    let balance: String
+    let duted:String
 }

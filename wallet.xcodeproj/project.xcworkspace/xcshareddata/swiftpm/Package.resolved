@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "swiftuicharts",
+      "kind" : "remoteSourceControl",
+      "location" : "http://code.lichongbing.com/lichongbing/SwiftUICharts",
+      "state" : {
+        "revision" : "dc9f96542917de26b20ddb40266cdb9d259b3d13",
+        "version" : "0.7.0"
+      }
+    },
+    {
       "identity" : "swiftyjson",
       "kind" : "remoteSourceControl",
       "location" : "http://code.lichongbing.com/lichongbing/SwiftyJSON",

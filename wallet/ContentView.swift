@@ -11,22 +11,22 @@ import SwiftyJSON
 import AuthenticationServices
 import JWTDecode
 struct ContentView: View {
-    @AppStorage("login") private var login = false
+    @AppStorage("loginA") private var loginA = false
     init(){
         guard let token = UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") else{
             return
         }
         let expiration = try! decode(jwt: token as! String).expiresAt
         let now = Date()
-        if(now >= expiration!){
-            self.login = false
+        if(now  <= expiration!){
+            self.loginA = false
         }else{
-            self.login = true
+            self.loginA = true
         }
     }
     var body: some View {
         VStack {
-            if(login){
+            if(loginA){
                 PortalView()
             }else{
                 Text("个人财物管理软件")
@@ -44,16 +44,19 @@ struct ContentView: View {
                     case .success(let authResults):
                     switch authResults.credential {
                         case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                             print(appleIDCredential)
                             let uID = appleIDCredential.user
                             let identityToken = appleIDCredential.identityToken
                             let authorizationCode = appleIDCredential.authorizationCode
-                            struct AppleToken: Encodable {
-                                           let user: String
-                                           let identityToken: Data
-                                           let authorizationCode: Data
-                                       }
+                           struct AppleToken: Encodable {
+                                       let expire:String
+                                       let user: String
+                                       let identityToken: Data
+                                       let authorizationCode: String
+                                   }
+                        let code = String(data:authorizationCode!, encoding: String.Encoding.utf8)!
                             let baseurl = Config.pro
-                            let appleToken = AppleToken(user: uID, identityToken: identityToken!,authorizationCode: authorizationCode!)
+                            let appleToken = AppleToken(expire: "600", user: uID, identityToken: identityToken!,authorizationCode: code)
                             let headers: HTTPHeaders = [
                                                "Content-Type": "application/json;charset=UTF-8"
                                            ]
@@ -62,10 +65,10 @@ struct ContentView: View {
                             { response in
                               let token =  (response.response?.headers.value(for: "token"))! as String
                               let userdefault =  UserDefaults.init(suiteName: "group.com.lichongbing.lyoggl")
-                             userdefault?.set(token, forKey: "token")
+                             userdefault?.set(token, forKey: "tokenA")
                                                print(appleToken)
                                                print(token)
-                                self.login = true
+                                self.loginA = true
                            }
                         default:
                             break

@@ -14,6 +14,8 @@ struct BankView: View {
     @State var textFieldText1 = ""
     @State var textFieldText2 = ""
     @State var textFieldText3 = ""
+    @State var textFieldText4 = ""
+    @State var textFieldText5 = ""
     var body: some View {
         List{
             ForEach(bankDao.moneys,id:\.self) { item in
@@ -39,7 +41,7 @@ struct BankView: View {
         .listStyle(PlainListStyle())
         .navigationTitle("信用卡")
         .navigationBarItems(trailing: plusButton)
-        .sheet(isPresented: $isPresentAddView, content:{BankaddView(isPresented: $isPresentAddView, textFieldText: $textFieldText, textFieldText1: $textFieldText1, textFieldText2: $textFieldText2,textFieldText3: $textFieldText3)})
+        .sheet(isPresented: $isPresentAddView, content:{BankaddView(isPresented: $isPresentAddView, textFieldText: $textFieldText, textFieldText1: $textFieldText1, textFieldText2: $textFieldText2,textFieldText3: $textFieldText3,textFieldText4:$textFieldText4, textFieldText5: $textFieldText5)})
     Spacer()
     }
     var plusButton: some View{

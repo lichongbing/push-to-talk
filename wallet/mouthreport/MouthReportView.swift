@@ -8,23 +8,24 @@
 import SwiftUI
 import Alamofire
 import SwiftyJSON
+import SwiftUICharts
 struct MouthReportView: View {
     @EnvironmentObject var mouthReportDao: MouthReportDao
+    let limit = DataPoint(value: 500, label: "5", legend: Legend(color: .yellow, label: "持平", order: 4))
     var body: some View {
         VStack{
             Text("本月报告").bold()
-            Spacer()
             HStack{
                 Text("收入").bold()
                 Spacer()
-                Text(mouthReportDao.report.money1).bold()
+                Text(mouthReportDao.report.money0).bold()
                 Spacer()
             }
      
             HStack{
                 Text("支出").bold()
                 Spacer()
-                Text(mouthReportDao.report.money0).bold()
+                Text(mouthReportDao.report.money1).bold()
                 Spacer()
             }
           
@@ -41,14 +42,27 @@ struct MouthReportView: View {
                 Text(mouthReportDao.report.pay2).bold()
                 Spacer()
             }
-      
+            HStack{
+                Text("可用现金").bold()
+                Spacer()
+                Text(mouthReportDao.report.balance).bold()
+                Spacer()
+            }
             HStack{
                 Text("可用额度").bold()
                 Spacer()
                 Text(mouthReportDao.report.duting).bold()
                 Spacer()
             }
-            Spacer()
+            HStack{
+                Text("总欠款").bold()
+                Spacer()
+                Text(mouthReportDao.report.duted).bold()
+                Spacer()
+            }
+            Text("本月每天支出统计").bold()
+            BarChartView(dataPoints: mouthReportDao.days, limit: limit)
+
         }.onAppear(perform: {
             mouthReportDao.getMouthReport()
         })

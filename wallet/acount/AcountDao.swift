@@ -12,7 +12,7 @@ class AcountDao: ObservableObject{
     @Published var moneys : [Acount] = []
     let baseurl = Config.pro
     func addMony(newItem:Acount){
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -25,7 +25,7 @@ class AcountDao: ObservableObject{
         }
     }
     func getItems() {
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -39,6 +39,8 @@ class AcountDao: ObservableObject{
                 var itemss: [Acount] = []
                 let Json =  JSON(value);
                 let data  = Json["data"].arrayValue
+                let code = Json["code"].int
+                if(code==200){
                 JSON(data).forEach { (JSON, json) in
                     let id  =  json["id"].stringValue
                     let name  =  json["bank"].stringValue
@@ -57,6 +59,10 @@ class AcountDao: ObservableObject{
                     itemss.append(ac)
                 }
                 self.moneys = itemss
+            }else{
+                let login = false
+                UserDefaults.standard.set(login,forKey: "loginA")
+            }
             case .failure(let error):
                 print(error)
             }
@@ -66,7 +72,7 @@ class AcountDao: ObservableObject{
     func deleteItem(indexSet: IndexSet) {
         let item = indexSet[indexSet.startIndex]
         let id =  moneys[item].id
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token
@@ -80,7 +86,7 @@ class AcountDao: ObservableObject{
        
     }
     func updateItem(item: Acount) {
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "token") as! String
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
         let headers: HTTPHeaders = [
             "Content-Type": "application/json;charset=UTF-8",
             "token": token

@@ -14,4 +14,5 @@ struct MouthReport: Identifiable, Encodable ,Decodable,Hashable{
     let pay2: String
     let duting:String
     let duted:String
+    let balance:String
 }
