@@ -61,8 +61,8 @@ struct MouthReportView: View {
                 Spacer()
             }
             Text("本月每天支出统计").bold()
-            BarChartView(dataPoints: mouthReportDao.days, limit: limit)
-
+           BarChartView(dataPoints: mouthReportDao.days, limit: limit)
+            //LineChartView(dataPoints: mouthReportDao.days)
         }.onAppear(perform: {
             mouthReportDao.getMouthReport()
         })
