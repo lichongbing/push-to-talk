@@ -8,28 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var mouthReportDao: MouthReportDao = MouthReportDao()
+
     @StateObject var moneyDao: MoneyDao = MoneyDao()
     @StateObject var bankDao: BankDao = BankDao()
     @StateObject var acountDao: AcountDao = AcountDao()
     var index:Int
     var body: some View {
-        if index==0 {
-            MouthReportView().environmentObject(mouthReportDao)
-        }else if index==1{
+        if index==0{
             NavigationView {
                 MoneyView()
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(moneyDao)
-        }else if index==2{
+        }else if index==1{
             NavigationView {
                 AcountView()
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(acountDao)
             .environmentObject(bankDao)
-        }else if index==3{
+        }else if index==2{
             NavigationView {
                 BankView()
             }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431D95D929389B70003D7BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431D95D829389B70003D7BA6 /* Assets.xcassets */; };
 		43706B9B28B50C4C0047D663 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 43706B9A28B50C4C0047D663 /* SwiftUICharts */; };
 		43E3259F28A339B300AB66CB /* walletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3259E28A339B300AB66CB /* walletApp.swift */; };
 		43E325A128A339B300AB66CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325A028A339B300AB66CB /* ContentView.swift */; };
@@ -18,9 +19,6 @@
 		43E325B728A354E300AB66CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 43E325B628A354E300AB66CB /* Alamofire */; };
 		43E325BA28A3552000AB66CB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 43E325B928A3552000AB66CB /* SwiftyJSON */; };
 		43E325BD28A376C200AB66CB /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 43E325BC28A376C200AB66CB /* JWTDecode */; };
-		43E325BF28A3C22300AB66CB /* MouthReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325BE28A3C22300AB66CB /* MouthReportView.swift */; };
-		43E325C128A3E3FA00AB66CB /* MouthReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325C028A3E3FA00AB66CB /* MouthReport.swift */; };
-		43E325C428A3E59700AB66CB /* MouthReportDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325C328A3E59700AB66CB /* MouthReportDao.swift */; };
 		43E325D228A478BD00AB66CB /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325D128A478BD00AB66CB /* Money.swift */; };
 		43E325D428A478C100AB66CB /* MoneyDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325D328A478C100AB66CB /* MoneyDao.swift */; };
 		43E325D628A478CA00AB66CB /* MoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325D528A478CA00AB66CB /* MoneyView.swift */; };
@@ -40,7 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		43E3259B28A339B300AB66CB /* wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		431D95D829389B70003D7BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../ppt/ppt/Assets.xcassets; sourceTree = "<group>"; };
+		431D95DA29389D90003D7BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43E3259B28A339B300AB66CB /* ppts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E3259E28A339B300AB66CB /* walletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletApp.swift; sourceTree = "<group>"; };
 		43E325A028A339B300AB66CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		43E325A228A339B800AB66CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,9 +49,6 @@
 		43E325AE28A34EE900AB66CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		43E325B228A353FA00AB66CB /* wallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallet.entitlements; sourceTree = "<group>"; };
 		43E325B328A3545800AB66CB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		43E325BE28A3C22300AB66CB /* MouthReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthReportView.swift; sourceTree = "<group>"; };
-		43E325C028A3E3FA00AB66CB /* MouthReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthReport.swift; sourceTree = "<group>"; };
-		43E325C328A3E59700AB66CB /* MouthReportDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouthReportDao.swift; sourceTree = "<group>"; };
 		43E325D128A478BD00AB66CB /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		43E325D328A478C100AB66CB /* MoneyDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDao.swift; sourceTree = "<group>"; };
 		43E325D528A478CA00AB66CB /* MoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyView.swift; sourceTree = "<group>"; };
@@ -96,7 +93,7 @@
 		43E3259C28A339B300AB66CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43E3259B28A339B300AB66CB /* wallet.app */,
+				43E3259B28A339B300AB66CB /* ppts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,10 +101,11 @@
 		43E3259D28A339B300AB66CB /* wallet */ = {
 			isa = PBXGroup;
 			children = (
+				431D95DA29389D90003D7BA6 /* Info.plist */,
+				431D95D829389B70003D7BA6 /* Assets.xcassets */,
 				43E325DE28A4E33500AB66CB /* bank */,
 				43E325D928A4792300AB66CB /* money */,
 				43E325D028A4789E00AB66CB /* acount */,
-				43E325C228A3E54200AB66CB /* mouthreport */,
 				43E325B228A353FA00AB66CB /* wallet.entitlements */,
 				43E3259E28A339B300AB66CB /* walletApp.swift */,
 				43E325A028A339B300AB66CB /* ContentView.swift */,
@@ -126,16 +124,6 @@
 				43E325A528A339B800AB66CB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		43E325C228A3E54200AB66CB /* mouthreport */ = {
-			isa = PBXGroup;
-			children = (
-				43E325C028A3E3FA00AB66CB /* MouthReport.swift */,
-				43E325BE28A3C22300AB66CB /* MouthReportView.swift */,
-				43E325C328A3E59700AB66CB /* MouthReportDao.swift */,
-			);
-			path = mouthreport;
 			sourceTree = "<group>";
 		};
 		43E325D028A4789E00AB66CB /* acount */ = {
@@ -178,9 +166,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43E3259A28A339B300AB66CB /* wallet */ = {
+		43E3259A28A339B300AB66CB /* ppts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43E325A928A339B800AB66CB /* Build configuration list for PBXNativeTarget "wallet" */;
+			buildConfigurationList = 43E325A928A339B800AB66CB /* Build configuration list for PBXNativeTarget "ppts" */;
 			buildPhases = (
 				43E3259728A339B300AB66CB /* Sources */,
 				43E3259828A339B300AB66CB /* Frameworks */,
@@ -190,7 +178,7 @@
 			);
 			dependencies = (
 			);
-			name = wallet;
+			name = ppts;
 			packageProductDependencies = (
 				43E325B628A354E300AB66CB /* Alamofire */,
 				43E325B928A3552000AB66CB /* SwiftyJSON */,
@@ -198,7 +186,7 @@
 				43706B9A28B50C4C0047D663 /* SwiftUICharts */,
 			);
 			productName = wallet;
-			productReference = 43E3259B28A339B300AB66CB /* wallet.app */;
+			productReference = 43E3259B28A339B300AB66CB /* ppts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43E3259628A339B300AB66CB /* Build configuration list for PBXProject "wallet" */;
+			buildConfigurationList = 43E3259628A339B300AB66CB /* Build configuration list for PBXProject "ppts" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -235,7 +223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43E3259A28A339B300AB66CB /* wallet */,
+				43E3259A28A339B300AB66CB /* ppts */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E325A628A339B800AB66CB /* Preview Assets.xcassets in Resources */,
+				431D95D929389B70003D7BA6 /* Assets.xcassets in Resources */,
 				43E325A328A339B800AB66CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43E325C128A3E3FA00AB66CB /* MouthReport.swift in Sources */,
 				43E325E428A4E5F300AB66CB /* Acount.swift in Sources */,
 				43E325E628A4E6E600AB66CB /* AcountDao.swift in Sources */,
 				43E325AD28A34E4B00AB66CB /* PortalView.swift in Sources */,
@@ -266,9 +254,7 @@
 				43E325AF28A34EE900AB66CB /* HomeView.swift in Sources */,
 				43E325E828A4E99700AB66CB /* BankView.swift in Sources */,
 				43E325D228A478BD00AB66CB /* Money.swift in Sources */,
-				43E325BF28A3C22300AB66CB /* MouthReportView.swift in Sources */,
 				43E325EE28A4FF6200AB66CB /* AcountView.swift in Sources */,
-				43E325C428A3E59700AB66CB /* MouthReportDao.swift in Sources */,
 				43E325D628A478CA00AB66CB /* MoneyView.swift in Sources */,
 				43E325EC28A4EC5F00AB66CB /* BankaddView.swift in Sources */,
 				43E325DD28A47CFB00AB66CB /* MoneyaddView.swift in Sources */,
@@ -413,11 +399,14 @@
 				DEVELOPMENT_TEAM = 3S5TMAE5S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wallet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "对讲机";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,6 +414,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lichongbing.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,11 +435,14 @@
 				DEVELOPMENT_TEAM = 3S5TMAE5S2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wallet/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "对讲机";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +450,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lichongbing.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43E3259628A339B300AB66CB /* Build configuration list for PBXProject "wallet" */ = {
+		43E3259628A339B300AB66CB /* Build configuration list for PBXProject "ppts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43E325A728A339B800AB66CB /* Debug */,
@@ -473,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43E325A928A339B800AB66CB /* Build configuration list for PBXNativeTarget "wallet" */ = {
+		43E325A928A339B800AB66CB /* Build configuration list for PBXNativeTarget "ppts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43E325AA28A339B800AB66CB /* Debug */,

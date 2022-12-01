@@ -12,12 +12,7 @@ struct PortalView: View {
     let imgs = ["flag.circle","list.bullet.circle","tag.circle","creditcard.circle"]
     @State     var index = 0
     var body: some View {
-        TabView(selection: $index){
-                    ForEach(0..<imgs.count){item in
-                        HomeView(index: item).tabItem{Image(systemName: self.imgs[item])
-                            Text(self.tags[item])}
-                    }
-        }
+       Text("hello")
     }
 }
 struct PortalView_Previews: PreviewProvider {

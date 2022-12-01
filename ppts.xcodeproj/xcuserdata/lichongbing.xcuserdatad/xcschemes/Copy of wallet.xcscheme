@@ -14,9 +14,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "43E3259A28A339B300AB66CB"
-               BuildableName = "wallet.app"
-               BlueprintName = "wallet"
-               ReferencedContainer = "container:wallet.xcodeproj">
+               BuildableName = "ppts.app"
+               BlueprintName = "ppts"
+               ReferencedContainer = "container:ppts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "43E3259A28A339B300AB66CB"
-            BuildableName = "wallet.app"
-            BlueprintName = "wallet"
-            ReferencedContainer = "container:wallet.xcodeproj">
+            BuildableName = "ppts.app"
+            BlueprintName = "ppts"
+            ReferencedContainer = "container:ppts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>

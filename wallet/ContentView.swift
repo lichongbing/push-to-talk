@@ -19,9 +19,9 @@ struct ContentView: View {
         let expiration = try! decode(jwt: token as! String).expiresAt
         let now = Date()
         if(now  <= expiration!){
-            self.loginA = false
-        }else{
             self.loginA = true
+        }else{
+            self.loginA = false
         }
     }
     var body: some View {
@@ -29,7 +29,7 @@ struct ContentView: View {
             if(loginA){
                 PortalView()
             }else{
-                Text("个人财物管理软件")
+                Text("对讲机")
                 signInWithApple
             }
         }

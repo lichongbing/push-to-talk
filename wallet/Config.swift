@@ -8,6 +8,6 @@
 import Foundation
 struct Config {
     //static let pro = "http://172.20.10.3:9090"
-    static let pro = "https://blog.lichongbing.com"
+    static let pro = "https://ptp.lichongbing.com"
     
 }
