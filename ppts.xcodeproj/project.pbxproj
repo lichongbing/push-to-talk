@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		431D95D929389B70003D7BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431D95D829389B70003D7BA6 /* Assets.xcassets */; };
 		43706B9B28B50C4C0047D663 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 43706B9A28B50C4C0047D663 /* SwiftUICharts */; };
+		43DDDB58294C5137008F4C90 /* ChannelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4A294C5137008F4C90 /* ChannelDelegate.swift */; };
+		43DDDB59294C5137008F4C90 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4B294C5137008F4C90 /* AddView.swift */; };
+		43DDDB5A294C5137008F4C90 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4C294C5137008F4C90 /* ChannelListView.swift */; };
+		43DDDB5B294C5137008F4C90 /* AudioEnginePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4D294C5137008F4C90 /* AudioEnginePlayer.swift */; };
+		43DDDB5C294C5137008F4C90 /* AudioStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4E294C5137008F4C90 /* AudioStatus.swift */; };
+		43DDDB5D294C5137008F4C90 /* SandBoxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4F294C5137008F4C90 /* SandBoxUtil.swift */; };
+		43DDDB5E294C5137008F4C90 /* ChannelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB50294C5137008F4C90 /* ChannelDetailView.swift */; };
+		43DDDB5F294C5137008F4C90 /* AudioConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB51294C5137008F4C90 /* AudioConst.swift */; };
+		43DDDB60294C5137008F4C90 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB52294C5137008F4C90 /* Channel.swift */; };
+		43DDDB61294C5137008F4C90 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB53294C5137008F4C90 /* NoItemsView.swift */; };
+		43DDDB62294C5137008F4C90 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB54294C5137008F4C90 /* ListRowView.swift */; };
+		43DDDB63294C5137008F4C90 /* ChannelDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB55294C5137008F4C90 /* ChannelDao.swift */; };
+		43DDDB64294C5137008F4C90 /* AudioEngineRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB56294C5137008F4C90 /* AudioEngineRecorder.swift */; };
+		43DDDB65294C5137008F4C90 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB57294C5137008F4C90 /* AudioRecorder.swift */; };
 		43E3259F28A339B300AB66CB /* walletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3259E28A339B300AB66CB /* walletApp.swift */; };
 		43E325A128A339B300AB66CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E325A028A339B300AB66CB /* ContentView.swift */; };
 		43E325A328A339B800AB66CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43E325A228A339B800AB66CB /* Assets.xcassets */; };
@@ -40,6 +54,20 @@
 /* Begin PBXFileReference section */
 		431D95D829389B70003D7BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../ppt/ppt/Assets.xcassets; sourceTree = "<group>"; };
 		431D95DA29389D90003D7BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		43DDDB4A294C5137008F4C90 /* ChannelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDelegate.swift; sourceTree = "<group>"; };
+		43DDDB4B294C5137008F4C90 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		43DDDB4C294C5137008F4C90 /* ChannelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListView.swift; sourceTree = "<group>"; };
+		43DDDB4D294C5137008F4C90 /* AudioEnginePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEnginePlayer.swift; sourceTree = "<group>"; };
+		43DDDB4E294C5137008F4C90 /* AudioStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioStatus.swift; sourceTree = "<group>"; };
+		43DDDB4F294C5137008F4C90 /* SandBoxUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBoxUtil.swift; sourceTree = "<group>"; };
+		43DDDB50294C5137008F4C90 /* ChannelDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDetailView.swift; sourceTree = "<group>"; };
+		43DDDB51294C5137008F4C90 /* AudioConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioConst.swift; sourceTree = "<group>"; };
+		43DDDB52294C5137008F4C90 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		43DDDB53294C5137008F4C90 /* NoItemsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
+		43DDDB54294C5137008F4C90 /* ListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		43DDDB55294C5137008F4C90 /* ChannelDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDao.swift; sourceTree = "<group>"; };
+		43DDDB56294C5137008F4C90 /* AudioEngineRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngineRecorder.swift; sourceTree = "<group>"; };
+		43DDDB57294C5137008F4C90 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		43E3259B28A339B300AB66CB /* ppts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ppts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E3259E28A339B300AB66CB /* walletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = walletApp.swift; sourceTree = "<group>"; };
 		43E325A028A339B300AB66CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +110,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43DDDB49294C5137008F4C90 /* channel */ = {
+			isa = PBXGroup;
+			children = (
+				43DDDB4A294C5137008F4C90 /* ChannelDelegate.swift */,
+				43DDDB4B294C5137008F4C90 /* AddView.swift */,
+				43DDDB4C294C5137008F4C90 /* ChannelListView.swift */,
+				43DDDB4D294C5137008F4C90 /* AudioEnginePlayer.swift */,
+				43DDDB4E294C5137008F4C90 /* AudioStatus.swift */,
+				43DDDB4F294C5137008F4C90 /* SandBoxUtil.swift */,
+				43DDDB50294C5137008F4C90 /* ChannelDetailView.swift */,
+				43DDDB51294C5137008F4C90 /* AudioConst.swift */,
+				43DDDB52294C5137008F4C90 /* Channel.swift */,
+				43DDDB53294C5137008F4C90 /* NoItemsView.swift */,
+				43DDDB54294C5137008F4C90 /* ListRowView.swift */,
+				43DDDB55294C5137008F4C90 /* ChannelDao.swift */,
+				43DDDB56294C5137008F4C90 /* AudioEngineRecorder.swift */,
+				43DDDB57294C5137008F4C90 /* AudioRecorder.swift */,
+			);
+			path = channel;
+			sourceTree = "<group>";
+		};
 		43E3259228A339B300AB66CB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +150,7 @@
 		43E3259D28A339B300AB66CB /* wallet */ = {
 			isa = PBXGroup;
 			children = (
+				43DDDB49294C5137008F4C90 /* channel */,
 				431D95DA29389D90003D7BA6 /* Info.plist */,
 				431D95D829389B70003D7BA6 /* Assets.xcassets */,
 				43E325DE28A4E33500AB66CB /* bank */,
@@ -247,22 +297,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E325E428A4E5F300AB66CB /* Acount.swift in Sources */,
+				43DDDB60294C5137008F4C90 /* Channel.swift in Sources */,
+				43DDDB5E294C5137008F4C90 /* ChannelDetailView.swift in Sources */,
 				43E325E628A4E6E600AB66CB /* AcountDao.swift in Sources */,
+				43DDDB63294C5137008F4C90 /* ChannelDao.swift in Sources */,
+				43DDDB5C294C5137008F4C90 /* AudioStatus.swift in Sources */,
+				43DDDB58294C5137008F4C90 /* ChannelDelegate.swift in Sources */,
 				43E325AD28A34E4B00AB66CB /* PortalView.swift in Sources */,
+				43DDDB61294C5137008F4C90 /* NoItemsView.swift in Sources */,
+				43DDDB5B294C5137008F4C90 /* AudioEnginePlayer.swift in Sources */,
 				43E325EA28A4EA4C00AB66CB /* BankDetailView.swift in Sources */,
+				43DDDB5D294C5137008F4C90 /* SandBoxUtil.swift in Sources */,
 				43E325DB28A4797D00AB66CB /* MoneyDetailView.swift in Sources */,
 				43E325AF28A34EE900AB66CB /* HomeView.swift in Sources */,
 				43E325E828A4E99700AB66CB /* BankView.swift in Sources */,
+				43DDDB5A294C5137008F4C90 /* ChannelListView.swift in Sources */,
 				43E325D228A478BD00AB66CB /* Money.swift in Sources */,
 				43E325EE28A4FF6200AB66CB /* AcountView.swift in Sources */,
 				43E325D628A478CA00AB66CB /* MoneyView.swift in Sources */,
 				43E325EC28A4EC5F00AB66CB /* BankaddView.swift in Sources */,
 				43E325DD28A47CFB00AB66CB /* MoneyaddView.swift in Sources */,
+				43DDDB59294C5137008F4C90 /* AddView.swift in Sources */,
+				43DDDB64294C5137008F4C90 /* AudioEngineRecorder.swift in Sources */,
+				43DDDB5F294C5137008F4C90 /* AudioConst.swift in Sources */,
 				43E325A128A339B300AB66CB /* ContentView.swift in Sources */,
 				43E325D428A478C100AB66CB /* MoneyDao.swift in Sources */,
 				43E3259F28A339B300AB66CB /* walletApp.swift in Sources */,
 				43E325E228A4E4D800AB66CB /* BankDao.swift in Sources */,
 				43E325B428A3545800AB66CB /* Config.swift in Sources */,
+				43DDDB65294C5137008F4C90 /* AudioRecorder.swift in Sources */,
+				43DDDB62294C5137008F4C90 /* ListRowView.swift in Sources */,
 				43E325F628A50EED00AB66CB /* PickerView.swift in Sources */,
 				43E325E028A4E46900AB66CB /* Bank.swift in Sources */,
 				43E325F228A4FFA900AB66CB /* AcountaddView.swift in Sources */,
@@ -401,6 +465,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "对讲机";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "push to talk recoding";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +502,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = wallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "对讲机";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "push to talk recoding";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

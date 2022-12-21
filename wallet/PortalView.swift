@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct PortalView: View {
-    let tags = ["月报","收支","账单","卡片"]
-    let imgs = ["flag.circle","list.bullet.circle","tag.circle","creditcard.circle"]
+    @StateObject var channels: ChannelDao = ChannelDao()
     @State     var index = 0
     var body: some View {
-       Text("hello")
+        TabView {
+            NavigationView {
+                ChannelListView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .tabItem {
+              VStack {
+                Image(systemName: "mic.and.signal.meter")
+                Text("频道")
+              }
+            }
+            .tag(0)
+            .environmentObject(channels)
+            NavigationView {
+                Text("设置")
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .tabItem {
+              VStack {
+                Image(systemName: "iphone.gen1.radiowaves.left.and.right")
+                Text("设置")
+              }
+            }
+            .tag(1)
+          
+        }
+        
+     
+
     }
 }
 struct PortalView_Previews: PreviewProvider {
