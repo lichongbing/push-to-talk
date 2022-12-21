@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		431D95D929389B70003D7BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431D95D829389B70003D7BA6 /* Assets.xcassets */; };
 		43706B9B28B50C4C0047D663 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 43706B9A28B50C4C0047D663 /* SwiftUICharts */; };
+		4396AAB92952E01600264AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4396AAB82952E01600264AFA /* Assets.xcassets */; };
 		43DDDB58294C5137008F4C90 /* ChannelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4A294C5137008F4C90 /* ChannelDelegate.swift */; };
 		43DDDB59294C5137008F4C90 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4B294C5137008F4C90 /* AddView.swift */; };
 		43DDDB5A294C5137008F4C90 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDDB4C294C5137008F4C90 /* ChannelListView.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		431D95D829389B70003D7BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../ppt/ppt/Assets.xcassets; sourceTree = "<group>"; };
 		431D95DA29389D90003D7BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4396AAB82952E01600264AFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		43DDDB4A294C5137008F4C90 /* ChannelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelDelegate.swift; sourceTree = "<group>"; };
 		43DDDB4B294C5137008F4C90 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		43DDDB4C294C5137008F4C90 /* ChannelListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		43E3259D28A339B300AB66CB /* wallet */ = {
 			isa = PBXGroup;
 			children = (
+				4396AAB82952E01600264AFA /* Assets.xcassets */,
 				43DDDB49294C5137008F4C90 /* channel */,
 				431D95DA29389D90003D7BA6 /* Info.plist */,
 				431D95D829389B70003D7BA6 /* Assets.xcassets */,
@@ -285,6 +288,7 @@
 			files = (
 				43E325A628A339B800AB66CB /* Preview Assets.xcassets in Resources */,
 				431D95D929389B70003D7BA6 /* Assets.xcassets in Resources */,
+				4396AAB92952E01600264AFA /* Assets.xcassets in Resources */,
 				43E325A328A339B800AB66CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
