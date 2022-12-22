@@ -88,21 +88,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Ensure that your channel descriptor and UUID are persisted to disk for later use.
         AppDelegate.channelManager?.requestJoinChannel(channelUUID: channelUUID,
                                                        descriptor: channelDescriptor!)
-        Task{
-            try await AppDelegate.channelManager?.setTransmissionMode(.halfDuplex,
-                                                                     channelUUID: channelUUID)
-            
-            try  await reportServiceIsConnected(channelUUID: channelUUID)
-            
-        }
 
     }
     
     func leaveChannel(channelUUID: UUID){
         AppDelegate.channelManager?.leaveChannel(channelUUID: channelUUID)
-        Task{
-          try  await reportServiceIsReconnecting(channelUUID: channelUUID)
-        }
+       
     }
     func channelManager(_ channelManager: PTChannelManager,didLeaveChannel channelUUID: UUID,reason: PTChannelLeaveReason){
         // Process leaving the channel
@@ -126,9 +117,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func channelManager(_ channelManager: PTChannelManager, didJoinChannel channelUUID: UUID, reason: PTChannelJoinReason) {
-//        Task{
-//          try  await reportServiceIsConnected(channelUUID: channelUUID)
-//        }
+        Task{
+            try await channelManager.setTransmissionMode(.fullDuplex,
+                                                         channelUUID: channelUUID)
+            try  await reportServiceIsConnected(channelUUID: channelUUID)
+            let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
+            let pushtoken =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "pushtoken") as! String
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json;charset=UTF-8",
+                "token": token
+            ]
+            let item  = JoinChannelToken(id: AppDelegate.channelUUID ?? UUID(), deviceToken: pushtoken)
+            AF.request("\(baseurl)/channel/joinChannel",
+                       method: .post,
+                       parameters: item, encoder: JSONParameterEncoder.default,
+                       headers: headers).response
+            { response in
+                debugPrint(response)
+            }
+        }
+       
         print("Joined channel with UUID: \(channelUUID)")
     }
     func reportServiceIsReconnecting(channelUUID: UUID) async throws {
@@ -153,30 +161,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func channelManager(_ channelManager: PTChannelManager,
                         channelUUID: UUID,
                         didEndTransmittingFrom source: PTChannelTransmitRequestSource) {
-        //stopRecording()
-      //  play()
-//        let url = getURLforMemo()
-//        AF.upload(multipartFormData: { multipartFormData in
-//            multipartFormData.append(url, withName: "multiFile")
-//        }, to: "https://channel.lichongbing.com/audio/uploadAudio/\(channelUUID)")
-//            .response
-//        { response in
-//            debugPrint(response)
-//        }
-//
-//        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
-//        let headers: HTTPHeaders = [
-//            "Content-Type": "application/json;charset=UTF-8",
-//            "token": token
-//        ]
-//        let item  = JoinChannelToken(id: AppDelegate.channelUUID!, deviceToken: token)
-//        AF.request("\(baseurl)/channel/apnspro",
-//                   method: .post,
-//                   parameters: item, encoder: JSONParameterEncoder.default,
-//                   headers: headers).response
-//        { response in
-//            debugPrint(response)
-//        }
+        let url = getURLforMemo()
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(url, withName: "multiFile")
+        }, to: "https://channel.lichongbing.com/audio/uploadAudio/\(channelUUID)")
+            .response
+        { response in
+            debugPrint(response)
+        }
+
+        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json;charset=UTF-8",
+            "token": token
+        ]
+        let item  = JoinChannelToken(id: AppDelegate.channelUUID!, deviceToken: token)
+        AF.request("\(baseurl)/channel/apnspro",
+                   method: .post,
+                   parameters: item, encoder: JSONParameterEncoder.default,
+                   headers: headers).response
+        { response in
+            debugPrint(response)
+        }
         print("Did end transmission from: \(source)")
     }
     func channelManager(_ channelManager: PTChannelManager,
@@ -199,19 +205,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             partialResult + String(format: "%02x", uintNum)
         }
         UserDefaults.init(suiteName: "group.com.lichongbing.lyoggl")?.set(pushtoken, forKey: "pushtoken")
-        let token =  UserDefaults(suiteName: "group.com.lichongbing.lyoggl")?.object(forKey: "tokenA") as! String
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json;charset=UTF-8",
-            "token": token
-        ]
-        let item  = JoinChannelToken(id: AppDelegate.channelUUID ?? UUID(), deviceToken: pushtoken)
-        AF.request("\(baseurl)/channel/joinChannel",
-                   method: .post,
-                   parameters: item, encoder: JSONParameterEncoder.default,
-                   headers: headers).response
-        { response in
-            debugPrint(response)
-        }
+     
     }
     func channelManager(_ channelManager: PTChannelManager,
                         failedToJoinChannel channelUUID: UUID,
@@ -300,6 +294,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func channelManager(_ channelManager: PTChannelManager,
                         didDeactivate audioSession: AVAudioSession) {
         print("Did deactivate audio session")
+        
+        stopRecording()
+        
        
     }
     
@@ -345,27 +342,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
     }
     
-    func audioSetting(){
-        print("audioSetting")
-        let fileURL = getURLforMemo()
-        let recordSettings = [
-            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 44100.0,
-            AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-            ] as [String : Any]
-        
-        do {
-           let recorders =  try AVAudioRecorder(url: fileURL, settings: recordSettings)
-            print(recorders)
-            recorder = recorders
-            recorder.delegate = self
-            recorder.prepareToRecord()
-        } catch {
-            print("Error creating audio Recorder.")
-        }
-        
-    }
+
     
     func stopRecording() {
         audioStatus = .stopped
@@ -417,27 +394,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
         }
     }
-   func micaudio(){
-       let session = AVAudioSession.sharedInstance()
-       do {
-           try session.setCategory(AVAudioSession.Category.playAndRecord)
-                 if let input = session.availableInputs{
-                     debugInput = input.reduce("", { (result, desp) -> String in
-                         result + desp.debugDescription + "\n\n"
-                     })
-                 }
-                 try session.setActive(true)
-             
-                 session.requestRecordPermission({ (isGranted: Bool) in
-                     if isGranted {
-                         appHasMicAccess = true
-                     }
-                     else{
-                         appHasMicAccess = false
-                     }
-                 })
-             } catch let error as NSError {
-                 print("AVAudioSession configuration error: \(error.localizedDescription)")
-             }
-    }
+  
 }

@@ -13,21 +13,7 @@ struct ChannelDetailView: View {
     var item : Channel
     var body: some View {
         VStack{
-            VStack{
-                
-                Button {
-                    appDelegate.leaveChannels(channelUUID: item.id)
-                } label: {
-                    Text(  "点击退出频道(一旦退出将不再接收音频消息)")
-                }
-                Divider()
-                Button {
-                    appDelegate.leaveChannel(channelUUID: item.id)
-                } label: {
-                    Text(  "点击离开频道")
-                }
-                Divider()
-            }
+           
             List{
                 ForEach(channels.moneys1,id:\.self) { item in
                             VStack(alignment: .leading) {
@@ -42,6 +28,51 @@ struct ChannelDetailView: View {
                 channels.getjoinchannel(channel: item)
                
             }
+        
+                HStack {
+                    HStack{
+                        
+                        Button {
+                            appDelegate.leaveChannel(channelUUID: item.id)
+                        } label: {
+                            
+                            HStack{
+                                Image(systemName: "multiply")
+                                Text(  "离开")
+                                
+                            }.padding(EdgeInsets(top: 15, leading: 40, bottom: 15, trailing: 40))
+                                .foregroundColor(.white)
+                                .background(Color.red)
+                                .clipShape(RoundedRectangle(cornerRadius: 28))
+                            
+                        }
+                        
+                        
+                        
+                    }
+                    HStack{
+                        
+                        Button {
+                            appDelegate.startTransmitting(channelUUID: item.id)
+                        } label: {
+                            
+                            HStack{
+                                Image(systemName: "waveform")
+                                Text(  "对话")
+                                
+                            }.padding(EdgeInsets(top: 15, leading: 40, bottom: 15, trailing: 40))
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .clipShape(RoundedRectangle(cornerRadius: 28))
+                            
+                        }
+                        
+                        
+                        
+                    }
+                    
+                }.padding()
+            
                
         }.navigationBarItems(trailing:joinButton)
         }
